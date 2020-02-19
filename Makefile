@@ -17,7 +17,6 @@ docker_install:
 	sudo apt-get install docker-ce --no-install-recommends -y -o Dpkg::Options::="--force-confmiss" -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confnew"
 	docker --version
 	docker info
-
 docker_build:
 	git submodule update --init --recursive
 	sudo groupadd -r $(GALAXY_TRAVIS_USER) -g $(GALAXY_GID)
@@ -36,9 +35,7 @@ docker_run:
 		-e GALAXY_CONFIG_ENABLE_BETA_WORKFLOW_MODULES=True \
 		-v /tmp/:/tmp/ \
 		galaxy-docker/test
-#	docker ps
-#	docker exec -i -t galaxy_test_container /tool_deps/_conda/bin/galaxy-wait -v
-
+	docker ps
 sleep:
 	sleep 60
 

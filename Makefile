@@ -36,8 +36,8 @@ docker_run:
 		-e GALAXY_CONFIG_ENABLE_BETA_WORKFLOW_MODULES=True \
 		-v /tmp/:/tmp/ \
 		galaxy-docker/test
-	docker ps
-	docker exec -i -t galaxy_test_container /tool_deps/_conda/bin/galaxy-wait -v
+#	docker ps
+#	docker exec -i -t galaxy_test_container /tool_deps/_conda/bin/galaxy-wait -v
 
 sleep:
 	sleep 60
